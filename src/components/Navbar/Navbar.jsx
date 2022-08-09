@@ -16,6 +16,7 @@ import useStyles from "./Style";
 const Navbar = ({ totalItems }) => {
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
+
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
