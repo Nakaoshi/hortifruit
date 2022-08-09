@@ -1,11 +1,21 @@
-import React from "react";
+import React , {useState} from "react";
 import {Card,CardMedia, CardContent, CardActions,Typography,IconButton,} from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";
 import useStyles from "./style";
 
 const Produto = ({ produto }) => {
   const classes = useStyles();
+
+  const addCarrinho = ()=>{
+    
+    const ListaCarrinho = []
+    ListaCarrinho.push(produto.id, produto)
+    console.log(ListaCarrinho)
+
+  }
+  
   // const handleAddToCart = () => onAddToCart(produto.id, 1);
+
   return (
     <div>
       <Card className={classes.root}>
@@ -22,8 +32,7 @@ const Produto = ({ produto }) => {
         <Typography dangerouslySetInnerHTML={{ __html: produto.description }} variant="body2" color="textSecondary" component="p" />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton aria-label="Add to Cart" >
-        {/* onClick={handleAddToCart} */}
+        <IconButton aria-label="Add to Cart" onClick={addCarrinho(produto.id)}>
           <AddShoppingCart />
         </IconButton>
       </CardActions>
